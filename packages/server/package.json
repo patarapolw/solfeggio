@@ -1,0 +1,31 @@
+{
+  "name": "@solfeggio/server",
+  "version": "0.1.0",
+  "main": "lib/server.js",
+  "author": "Pacharapol Withayasakpunt (https://www.polv.cc)",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^7.4.3",
+    "death": "^1.1.0",
+    "fastify": "^3.20.1",
+    "fastify-static": "^4.2.2",
+    "fastify-swagger": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^5.4.3",
+    "@types/death": "^1.1.2",
+    "@types/node": "^16.4.12",
+    "fastify-cors": "^6.0.2",
+    "import-sort-parser-typescript": "^6.0.0",
+    "typescript": "^4.3.5"
+  },
+  "importSort": {
+    ".js, .ts": {
+      "parser": "typescript",
+      "style": "module"
+    }
+  },
+  "config": {
+    "serverPort": "10522"
+  }
+}

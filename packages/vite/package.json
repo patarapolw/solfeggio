@@ -2,11 +2,7 @@
   "name": "@solfeggio/vite",
   "version": "0.1.0",
   "private": true,
-  "author": {
-    "name": "Pacharapol Withayasakpunt",
-    "email": "polv@polv.cc",
-    "url": "https://www.polv.cc"
-  },
+  "author": "Pacharapol Withayasakpunt (https://www.polv.cc)",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -26,5 +22,14 @@
     "typescript": "^4.3.2",
     "vite": "^2.4.4",
     "vue-tsc": "^0.2.2"
+  },
+  "importSort": {
+    ".js, .ts": {
+      "parser": "typescript",
+      "style": "module"
+    }
+  },
+  "config": {
+    "serverPort": "10522"
   }
 }
