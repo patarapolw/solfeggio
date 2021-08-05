@@ -1,5 +1,5 @@
 {
-  "name": "solfeggio",
+  "name": "@solfeggio/root",
   "version": "0.1.0",
   "main": "index.js",
   "author": "Pacharapol Withayasakpunt <polv@polv.cc> (https://www.polv.cc)",

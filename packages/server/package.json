@@ -1,7 +1,7 @@
 {
   "name": "@solfeggio/server",
   "version": "0.1.0",
-  "main": "lib/server.js",
+  "main": "lib/index.js",
   "author": "Pacharapol Withayasakpunt (https://www.polv.cc)",
   "license": "MIT",
   "scripts": {

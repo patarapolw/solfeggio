@@ -23,6 +23,12 @@ async function main() {
         if (process.send) {
             process.send('ready')
         }
+
+        process.on('message', (msg) => {
+            if (process.send && msg === 'ready') {
+                process.send('ready')
+            }
+        })
     })
 }
 

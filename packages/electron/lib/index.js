@@ -4,26 +4,19 @@ const { fork } = require('child_process')
 const path = require('path')
 
 const { app, BrowserWindow } = require('electron')
+const { kill } = require('cross-port-killer')
 
 const ROOT = path.resolve(__dirname, '..')
 const SERVER_PORT = process.env.SERVER_PORT || require('../package.json').config.serverPort
 process.env.SERVER_PORT = SERVER_PORT
 
-const srvProcess = fork(path.join(ROOT, 'server/server.js'), {
+const srvProcess = fork(path.join(ROOT, 'server/index.js'), {
     stdio: 'inherit',
     env: process.env
 })
 
 srvProcess.on('exit', () => {
     app.quit()
-})
-
-require('death')(() => {
-    srvProcess.send('on-quit')
-
-    setTimeout(() => {
-        srvProcess.kill()
-    }, 5000)
 })
 
 require('electron-context-menu')()
@@ -37,17 +30,20 @@ async function main() {
     })
 
     win.maximize()
+    win.show()
 
     app.on('window-all-closed', () => {
-        app.quit()
+        kill(SERVER_PORT).then(() => app.quit())
     })
 
-    win.loadFile(path.join(ROOT, 'loading.html'))
+    // win.loadFile(path.join(ROOT, 'loading.html'))
 
-    srvProcess.once('ready', () => {
-        win.loadURL(`http://localhost:${SERVER_PORT}`)
+    srvProcess.on('message', (msg) => {
+        if (msg === 'ready') {
+            win.loadURL(`http://localhost:${SERVER_PORT}/app/`)
+        }
     })
-    srvProcess.send('on-ready')
+    srvProcess.send('ready')
 }
 
 main()

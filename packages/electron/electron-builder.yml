@@ -11,4 +11,6 @@ linux:
   target:
     - target: appImage
     - target: deb
+      # to build rpm, executable rpmbuild is required, please install: sudo apt-get install rpm  
+      # ArchLinux: rpm-tools
     - target: rpm

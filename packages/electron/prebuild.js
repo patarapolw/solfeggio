@@ -3,7 +3,7 @@
 const fs = require('fs')
 const pkg = require('./package.json')
 
-if (!fs.existsSync('package.orig.json')) {
+if (!fs.existsSync('package.orig.json') || process.env.OVERWRITE) {
     fs.copyFileSync('package.json', 'package.orig.json')
 }
 

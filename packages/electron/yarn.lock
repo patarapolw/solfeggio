@@ -78,11 +78,6 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/death@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@types/death/-/death-1.1.2.tgz#72a37216b23ff7f5b537b17de127c08fd619f478"
-  integrity sha512-Rr5NV/H/zj6zgbh6TCwMEe0NhCVS2QbAor0pikvzGx5fh+xsnmV3KUEq2Vb4vgi9ytBHorva+ryQmij2rrstTQ==
-
 "@types/debug@^4.1.5":
   version "4.1.7"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.7.tgz#7cc0ea761509124709b8b2d1090d8f6c17aadb82"
@@ -664,6 +659,11 @@ crc@^3.8.0:
   integrity sha512-iX3mfgcTMIq3ZKLIsVFAbv7+Mc10kxabAGQb8HvjA1o3T1PIYprbakQ65d3I+2HGHt6nSKkM9PYjgoJO2KcFBQ==
   dependencies:
     buffer "^5.1.0"
+
+cross-port-killer@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/cross-port-killer/-/cross-port-killer-1.3.0.tgz#66305ed1f6134333ea451baac6fc7b06c998a4b4"
+  integrity sha512-c52ohEZ8MEJEAc6jpe4c5LmInNIasjxswasbjGXraOphXZlltLHM+50rM6vEQm5eL2uNc4RqSdOTMcGdZe5EPQ==
 
 cross-spawn@^7.0.1:
   version "7.0.3"
