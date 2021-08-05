@@ -1,0 +1,14 @@
+appId: cc.polv.solfeggio
+productName: solfeggio
+mac:
+  category: public.app-category.education
+win:
+  target:
+    - target: nsis
+    - target: portable
+    - target: web
+linux:
+  target:
+    - target: appImage
+    - target: deb
+    - target: rpm

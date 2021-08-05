@@ -14,6 +14,10 @@ const srvProcess = fork(path.join(ROOT, 'server/server.js'), {
     env: process.env
 })
 
+srvProcess.on('exit', () => {
+    app.quit()
+})
+
 require('death')(() => {
     srvProcess.send('on-quit')
 

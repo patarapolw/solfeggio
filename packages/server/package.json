@@ -4,6 +4,10 @@
   "main": "lib/server.js",
   "author": "Pacharapol Withayasakpunt (https://www.polv.cc)",
   "license": "MIT",
+  "scripts": {
+    "build:server": "tsc -P src/tsconfig.json",
+    "build:web": "export _PWD=$PWD && cd ../vite && yarn vite build --outDir $_PWD/public"
+  },
   "dependencies": {
     "better-sqlite3": "^7.4.3",
     "death": "^1.1.0",

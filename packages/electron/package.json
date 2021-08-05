@@ -4,7 +4,16 @@
   "main": "lib/index.js",
   "author": "Pacharapol Withayasakpunt (https://www.polv.cc)",
   "license": "MIT",
+  "files": [
+    "lib",
+    "server",
+    "public"
+  ],
   "scripts": {
+    "prebuild": "node prebuild.js && yarn",
+    "build": "yarn build:server && yarn build:web && electron-builder",
+    "build:server": "export _PWD=$PWD && cd ../server && tsc -P src/tsconfig.json -O '{\"outDir\":\"$_PWD/server\"}'",
+    "build:web": "export _PWD=$PWD && cd ../vite && yarn vite build --outDir $_PWD/public",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
@@ -20,8 +29,7 @@
     "@types/node": "^16.4.12",
     "electron": "^13.1.8",
     "electron-builder": "^22.11.7",
-    "import-sort-parser-typescript": "^6.0.0",
-    "typescript": "^4.3.5"
+    "import-sort-parser-typescript": "^6.0.0"
   },
   "importSort": {
     ".js, .ts": {

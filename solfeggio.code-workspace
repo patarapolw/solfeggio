@@ -1,0 +1,20 @@
+{
+    "folders": [
+        {
+            "path": "packages/electron"
+        },
+        {
+            "path": "packages/server"
+        },
+        {
+            "path": "packages/vite"
+        },
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "vetur.experimental.templateInterpolationService": true,
+        "typescript.tsdk": "vite/node_modules/typescript/lib"
+    }
+}
