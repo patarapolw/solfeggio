@@ -1,4 +1,4 @@
-import { shell } from 'electron'
+import { MenuItemConstructorOptions, shell } from 'electron'
 
 export function buildMenu(opts = {
     repo: 'https://github.com/patarapolw/solfeggio',
@@ -120,7 +120,7 @@ export function buildMenu(opts = {
                 },
             ],
         },
-    ];
+    ] as MenuItemConstructorOptions[];
 
     return template;
 };

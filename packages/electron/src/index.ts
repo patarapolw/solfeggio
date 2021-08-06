@@ -28,7 +28,6 @@ srvProcess.on('exit', () => {
 async function main() {
     await app.whenReady()
 
-    // @ts-ignore
     Menu.setApplicationMenu(Menu.buildFromTemplate(buildMenu()))
 
     const win = new BrowserWindow({
