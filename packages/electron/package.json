@@ -38,6 +38,7 @@
     "fastify-swagger": "^4.8.4"
   },
   "devDependencies": {
+    "@types/death": "^1.1.2",
     "@types/node": "^16.4.12",
     "electron": "^13.1.8",
     "electron-builder": "^22.11.7",

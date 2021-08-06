@@ -2,6 +2,7 @@ import { fork } from 'child_process'
 import path from 'path'
 
 import { kill } from 'cross-port-killer'
+import ON_DEATH from 'death'
 import { BrowserWindow, Menu, app } from 'electron'
 import contextMenu from 'electron-context-menu'
 
@@ -23,6 +24,10 @@ const srvProcess = fork(path.join(ROOT, 'server/index.js'), {
 
 srvProcess.on('exit', () => {
     app.quit()
+})
+
+ON_DEATH(() => {
+    srvProcess.kill()
 })
 
 async function main() {

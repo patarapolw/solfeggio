@@ -4,7 +4,7 @@ export function buildMenu(opts = {
     repo: 'https://github.com/patarapolw/solfeggio',
     platform: process.platform
 }) {
-    const repo = opts.repo || "https://github.com/electron/electron";
+    const repo = opts.repo;
     const platform = opts.platform || process.platform;
 
     const isMac = platform === "darwin";
