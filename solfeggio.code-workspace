@@ -15,6 +15,7 @@
     ],
     "settings": {
         "vetur.experimental.templateInterpolationService": true,
-        "typescript.tsdk": "vite/node_modules/typescript/lib"
+        "typescript.tsdk": "vite/node_modules/typescript/lib",
+        "sort-imports.on-save": true
     }
 }

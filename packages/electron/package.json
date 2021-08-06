@@ -20,10 +20,11 @@
   ],
   "scripts": {
     "start": "electron .",
-    "prebuild": "node prebuild.js && yarn && yarn build:server && yarn build:web",
-    "build": "electron-builder",
+    "prebuild": "node prebuild.js && yarn",
+    "build": "yarn build:server && yarn build:web",
     "build:server": "export _PWD=$PWD && cd ../server && tsc -P src/tsconfig.json --outDir $_PWD/server",
     "build:web": "export _PWD=$PWD && cd ../vite && yarn vite build --outDir $_PWD/public",
+    "dist": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
